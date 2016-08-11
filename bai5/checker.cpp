@@ -191,6 +191,6 @@ int main() {
     }
 
     cout << "correct move" << endl;
-    if (s > opt) cout << 0.5 << endl;
+    if (s > opt) cout << 0.7 * (opt / s) << endl;
     else cout << 1.0 << endl;
 }
