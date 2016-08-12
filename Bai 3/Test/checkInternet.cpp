@@ -54,10 +54,10 @@ int main() {
 
     fs.open( (outputPath + "internet.out").c_str());
     fs >> output;
-    cout << "Output: " << output << endl;
-    cout << "Result: " << result << endl;
+    //cout << "Output: " << output << endl;
+    //cout << "Result: " << result << endl;
     if (output != result) {
-        cout << "Ket qua sai" << endl;
+        cout << "Wrong answer!" << endl;
         cout << 0;
         return 0;
     }
@@ -72,13 +72,13 @@ int main() {
         for(int i = 0; i < edge[u].size(); i++) {
             int v = edge[u][i];
             if (v == parent[u] && oldEdge[u][i]) {
-                cout << "Cac canh them vao sai" << endl;
+                cout << "Wrong answer!" << endl;
                 cout << 0;
                 return 0;
             }
         }
     }
-    cout << "Ket qua dung" << endl;
+    cout << "Correct!" << endl;
     cout << 1;
     return 0;
 }
