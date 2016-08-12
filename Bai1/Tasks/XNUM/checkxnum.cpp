@@ -166,24 +166,24 @@ int main()
         }
         if(!Valid(line))
         {
-            cout << "In sai dinh dang!\n";
+            cout << "Wrong Answer!\n";
             cout << "0\n";
             return 0;
         }
         if(!Check(line))
         {
-            cout << "Ket qua sai!\n";
+            cout << "Wrong Answer!\n";
             cout << "0\n";
             return 0;
         }
     }
     if(cntLine != k)
     {
-        cout << "So luong ket qua khong hop le!\n";
+        cout << "Wrong Answer!\n";
         cout << "0\n";
         return 0;
     }
-    cout << "Ket qua dung!\n";
+    cout << "Correct!\n";
     cout << "1\n";
     return 0;
 }
