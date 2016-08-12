@@ -28,8 +28,7 @@ void visit(int u) {
                 parent[v] = u;
                 visit(v);
                 low[u] = min(low[u], low[v]);
-            } else
-                low[u] = min(low[u], num[v]);
+            } else low[u] = min(low[u], num[v]);
         }
     }
 }
@@ -57,6 +56,29 @@ int main() {
     fs >> output;
     cout << "Output: " << output << endl;
     cout << "Result: " << result << endl;
+    if (output != result) {
+        cout << "Ket qua sai" << endl;
+        cout << 0;
+        return 0;
+    }
+    for (int i = 0; i < output; i++) {
+        fs >> u >> v;
+        addEdge(u, v, 0);
+    }
+    fs.close();
+
+    visit(1);
+    for(int u = 1; u <= n; u++) if (parent[u] != 0 && low[u] >= num[u]) {
+        for(int i = 0; i < edge[u].size(); i++) {
+            int v = edge[u][i];
+            if (v == parent[u] && oldEdge[u][i]) {
+                cout << "Cac canh them vao sai" << endl;
+                cout << 0;
+                return 0;
+            }
+        }
+    }
+    cout << "Ket qua dung" << endl;
     cout << 1;
     return 0;
 }
