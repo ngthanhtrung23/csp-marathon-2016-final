@@ -130,7 +130,7 @@ void makeMove(State& s, const Move& m) {
 }
 
 void wa(string comment) {
-    cout << comment << endl;
+//    cout << comment << endl;
     cout << 0.0 << endl;
     exit(0);
 }
